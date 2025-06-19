@@ -1,6 +1,6 @@
 
 :root {
-  /* Colors */
+
   --color-background: rgba(252, 252, 249, 1);
   --color-surface: rgba(255, 255, 253, 1);
   --color-text: rgba(19, 52, 59, 1);
@@ -22,7 +22,6 @@
   --color-focus-ring: rgba(33, 128, 141, 0.4);
   --color-select-caret: rgba(19, 52, 59, 0.8);
 
-  /* Common style patterns */
   --focus-ring: 0 0 0 3px var(--color-focus-ring);
   --focus-outline: 2px solid var(--color-primary);
   --status-bg-opacity: 0.15;
@@ -30,13 +29,11 @@
   --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
-  /* RGB versions for opacity control */
   --color-success-rgb: 33, 128, 141;
   --color-error-rgb: 192, 21, 47;
   --color-warning-rgb: 168, 75, 47;
   --color-info-rgb: 98, 108, 113;
 
-  /* Typography */
   --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
@@ -58,7 +55,6 @@
   --line-height-normal: 1.5;
   --letter-spacing-tight: -0.01em;
 
-  /* Spacing */
   --space-0: 0;
   --space-1: 1px;
   --space-2: 2px;
@@ -72,14 +68,12 @@
   --space-24: 24px;
   --space-32: 32px;
 
-  /* Border Radius */
   --radius-sm: 6px;
   --radius-base: 8px;
   --radius-md: 10px;
   --radius-lg: 12px;
   --radius-full: 9999px;
 
-  /* Shadows */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
@@ -89,19 +83,16 @@
   --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
     inset 0 -1px 0 rgba(0, 0, 0, 0.03);
 
-  /* Animation */
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Layout */
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
   --container-xl: 1280px;
 }
 
-/* Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: rgba(31, 33, 33, 1);
@@ -129,7 +120,6 @@
     --color-border-secondary: rgba(119, 124, 124, 0.2);
     --color-select-caret: rgba(245, 245, 245, 0.8);
 
-    /* Common style patterns - updated for dark mode */
     --focus-ring: 0 0 0 3px var(--color-focus-ring);
     --focus-outline: 2px solid var(--color-primary);
     --status-bg-opacity: 0.15;
@@ -137,7 +127,6 @@
     --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
-    /* RGB versions for dark mode */
     --color-success-rgb: 50, 184, 198;
     --color-error-rgb: 255, 84, 89;
     --color-warning-rgb: 230, 129, 97;
@@ -145,7 +134,6 @@
   }
 }
 
-/* Data attribute for manual theme switching */
 [data-color-scheme="dark"] {
   --color-background: rgba(31, 33, 33, 1);
   --color-surface: rgba(38, 40, 40, 1);
@@ -171,7 +159,6 @@
   --color-border-secondary: rgba(119, 124, 124, 0.2);
   --color-select-caret: rgba(245, 245, 245, 0.8);
 
-  /* Common style patterns - updated for dark mode */
   --focus-ring: 0 0 0 3px var(--color-focus-ring);
   --focus-outline: 2px solid var(--color-primary);
   --status-bg-opacity: 0.15;
@@ -179,7 +166,6 @@
   --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
-  /* RGB versions for dark mode */
   --color-success-rgb: 50, 184, 198;
   --color-error-rgb: 255, 84, 89;
   --color-warning-rgb: 230, 129, 97;
@@ -207,14 +193,12 @@
   --color-info: rgba(98, 108, 113, 1);
   --color-focus-ring: rgba(33, 128, 141, 0.4);
 
-  /* RGB versions for light mode */
   --color-success-rgb: 33, 128, 141;
   --color-error-rgb: 192, 21, 47;
   --color-warning-rgb: 168, 75, 47;
   --color-info-rgb: 98, 108, 113;
 }
 
-/* Base styles */
 html {
   font-size: var(--font-size-base);
   font-family: var(--font-family-base);
@@ -236,7 +220,6 @@ body {
   box-sizing: inherit;
 }
 
-/* Typography */
 h1,
 h2,
 h3,
@@ -307,7 +290,6 @@ pre code {
   padding: 0;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -386,7 +368,6 @@ pre code {
   cursor: not-allowed;
 }
 
-/* Form elements */
 .form-control {
   display: block;
   width: 100%;
@@ -418,14 +399,11 @@ select.form-control {
   padding-right: var(--space-32);
 }
 
-/* Add a dark mode specific caret */
 @media (prefers-color-scheme: dark) {
   select.form-control {
     background-image: var(--select-caret-dark);
   }
 }
-
-/* Also handle data-color-scheme */
 [data-color-scheme="dark"] select.form-control {
   background-image: var(--select-caret-dark);
 }
@@ -450,7 +428,6 @@ select.form-control {
   margin-bottom: var(--space-16);
 }
 
-/* Card component */
 .card {
   background-color: var(--color-surface);
   border-radius: var(--radius-lg);
@@ -474,7 +451,6 @@ select.form-control {
   border-bottom: 1px solid var(--color-card-border-inner);
 }
 
-/* Status indicators - simplified with CSS variables */
 .status {
   display: inline-flex;
   align-items: center;
@@ -524,7 +500,6 @@ select.form-control {
     rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
 }
 
-/* Container layout */
 .container {
   width: 100%;
   margin-right: auto;
@@ -554,7 +529,6 @@ select.form-control {
   }
 }
 
-/* Utility classes */
 .flex {
   display: flex;
 }
@@ -625,7 +599,6 @@ select.form-control {
   display: none;
 }
 
-/* Accessibility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -643,7 +616,6 @@ select.form-control {
   outline-offset: 2px;
 }
 
-/* Dark mode specifics */
 [data-color-scheme="dark"] .btn--outline {
   border: 1px solid var(--color-border-secondary);
 }
@@ -654,19 +626,15 @@ select.form-control {
     format('woff2');
 }
 
-/* Base CSS Variables */
 :root {
-  /* Pure Black & White Colors */
   --color-black: #000000;
   --color-white: #ffffff;
   
-  /* Theme Colors - Light Mode by Default */
   --color-background: var(--color-white);
   --color-text: var(--color-black);
   --color-text-secondary: rgba(0, 0, 0, 0.7);
   --color-border: rgba(0, 0, 0, 0.1);
   
-  /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-weight-light: 300;
   --font-weight-regular: 400;
@@ -674,7 +642,6 @@ select.form-control {
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   
-  /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -683,21 +650,18 @@ select.form-control {
   --space-2xl: 4rem;
   --space-3xl: 6rem;
   
-  /* Animation */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s ease;
   --transition-slow: 0.4s ease;
   --easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --easing-bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
   
-  /* 3D Effect Variables */
   --tilt-amount: 10deg;
   --perspective: 1000px;
   --rotation-amount: 5deg;
   --shadow-color: rgba(0, 0, 0, 0.15);
 }
 
-/* Dark Theme */
 [data-theme="dark"] {
   --color-background: var(--color-black);
   --color-text: var(--color-white);
@@ -706,7 +670,6 @@ select.form-control {
   --shadow-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -727,7 +690,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Loader */
 .loader {
   position: fixed;
   top: 0;
@@ -774,7 +736,6 @@ body {
   pointer-events: none;
 }
 
-/* Main Content */
 .main-content {
   opacity: 0;
   visibility: hidden;
@@ -786,14 +747,12 @@ body {
   visibility: visible;
 }
 
-/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-md);
 }
 
-/* Header */
 .header {
   position: fixed;
   top: 0;
@@ -869,7 +828,6 @@ body {
   border-color: var(--color-text);
 }
 
-/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -901,7 +859,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Button Styles */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -948,7 +905,6 @@ body {
   width: 100%;
 }
 
-/* Sections */
 section {
   padding: var(--space-3xl) 0;
   position: relative;
@@ -973,7 +929,6 @@ section {
   background-color: var(--color-text);
 }
 
-/* Services Section */
 .services {
   background-color: var(--color-background);
 }
@@ -1033,7 +988,6 @@ section {
   transform: translateZ(15px);
 }
 
-/* Products Section */
 .products {
   background-color: var(--color-background);
 }
@@ -1092,7 +1046,6 @@ section {
   transform: translateZ(20px);
 }
 
-/* Contact Section */
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1112,7 +1065,6 @@ section {
   color: var(--color-text-secondary);
 }
 
-/* Form Styles */
 .form-group {
   margin-bottom: var(--space-md);
 }
@@ -1144,7 +1096,6 @@ textarea.form-control {
   min-height: 120px;
 }
 
-/* Footer */
 .footer {
   padding: var(--space-xl) 0;
   border-top: 1px solid var(--color-border);
@@ -1171,7 +1122,6 @@ textarea.form-control {
   color: var(--color-text);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
@@ -1204,13 +1154,11 @@ textarea.form-control {
   }
 }
 
-/* 3D effect on hover */
 .tilt-effect {
   transform-style: preserve-3d;
   transform: perspective(1000px);
 }
 
-/* For reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

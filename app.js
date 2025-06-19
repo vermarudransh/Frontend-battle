@@ -1,4 +1,4 @@
-// Application data
+
 const servicesData = [
   {
     "title": "Web Development",
@@ -40,7 +40,7 @@ const productsData = [
   }
 ];
 
-// DOM elements
+
 const loader = document.getElementById('loader');
 const mainContent = document.getElementById('main-content');
 const themeToggle = document.getElementById('theme-toggle');
@@ -50,10 +50,9 @@ const contactForm = document.querySelector('.contact-form');
 const servicesGrid = document.querySelector('.services-grid');
 const productsGrid = document.querySelector('.products-grid');
 
-// Theme management
+
 let isDarkMode = false;
 
-// Initialize application
 document.addEventListener('DOMContentLoaded', function() {
     initLoader();
     initTheme();
@@ -64,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
 });
 
-// Loader functionality
+
 function initLoader() {
     const progressBar = document.querySelector('.loader-progress-bar');
     const counter = document.querySelector('.loader-counter');
@@ -73,31 +72,28 @@ function initLoader() {
     let currentNumber = 0;
     
     const loadingInterval = setInterval(() => {
-        // Simulate irregular loading progress
-        const increment = Math.random() * 15 + 5; // Random increment between 5-20
+       
+        const increment = Math.random() * 15 + 5; 
         progress = Math.min(progress + increment, 100);
         
-        // Update progress bar
+     
         progressBar.style.width = progress + '%';
-        
-        // Update counter with slight delay for realistic effect
+       
         const targetNumber = Math.floor(progress);
         if (currentNumber < targetNumber) {
             currentNumber = Math.min(currentNumber + Math.ceil(Math.random() * 3), targetNumber);
         }
         
-        // Format counter with leading zeros
+
         counter.textContent = currentNumber.toString().padStart(3, '0');
-        
-        // Complete loading
+
         if (progress >= 100) {
             clearInterval(loadingInterval);
             
-            // Final update
+  
             progressBar.style.width = '100%';
             counter.textContent = '100';
-            
-            // Hide loader and show content
+           
             setTimeout(() => {
                 loader.classList.add('hidden');
                 mainContent.classList.add('visible');
@@ -106,15 +102,14 @@ function initLoader() {
         }
     }, 100);
     
-    // Disable body scroll during loading
+
     document.body.style.overflow = 'hidden';
 }
 
-// Theme toggle functionality
+
 function initTheme() {
     themeToggle.addEventListener('click', toggleTheme);
-    
-    // Check for system preference
+
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         setDarkMode(true);
     }
@@ -137,7 +132,7 @@ function setDarkMode(dark) {
     }
 }
 
-// Navigation functionality
+
 function initNavigation() {
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -157,14 +152,13 @@ function initNavigation() {
         });
     });
     
-    // Header scroll effect
+
     let lastScrollY = window.scrollY;
     const header = document.querySelector('.header');
     
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        
-        // Hide/show header on scroll
+     
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
             header.style.transform = 'translateY(-100%)';
         } else {
@@ -175,7 +169,6 @@ function initNavigation() {
     });
 }
 
-// Form handling
 function initFormHandling() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -186,7 +179,7 @@ function initFormHandling() {
             const email = formData.get('email');
             const message = formData.get('message');
             
-            // Simple validation
+     
             if (!name || !email || !message) {
                 showNotification('Please fill in all fields.', 'error');
                 return;
@@ -196,8 +189,7 @@ function initFormHandling() {
                 showNotification('Please enter a valid email address.', 'error');
                 return;
             }
-            
-            // Simulate form submission
+  
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             
@@ -214,15 +206,14 @@ function initFormHandling() {
     }
 }
 
-// Email validation
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Notification system
+
 function showNotification(message, type = 'info') {
-    // Remove existing notifications
+
     const existingNotification = document.querySelector('.notification');
     if (existingNotification) {
         existingNotification.remove();
@@ -235,7 +226,7 @@ function showNotification(message, type = 'info') {
         <button class="notification-close" aria-label="Close">&times;</button>
     `;
 
-    // Styles
+
     notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -255,7 +246,7 @@ function showNotification(message, type = 'info') {
 
     document.body.appendChild(notification);
 
-    // Close functionality
+
     const closeButton = notification.querySelector('.notification-close');
     closeButton.style.cssText = `
         background: none;
@@ -272,7 +263,6 @@ function showNotification(message, type = 'info') {
         setTimeout(() => notification.remove(), 300);
     });
 
-    // Auto remove
     setTimeout(() => {
         if (notification.parentElement) {
             notification.style.animation = 'slideOutRight 0.3s ease';
@@ -281,7 +271,6 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Add notification animations
 const notificationStyles = document.createElement('style');
 notificationStyles.textContent = `
     @keyframes slideInRight {
@@ -296,7 +285,6 @@ notificationStyles.textContent = `
 `;
 document.head.appendChild(notificationStyles);
 
-// Render services with 3D hover effects
 function renderServices() {
     servicesGrid.innerHTML = '';
     
@@ -309,7 +297,6 @@ function renderServices() {
             <p>${service.description}</p>
         `;
         
-        // Add 3D tilt effect on hover
         serviceCard.addEventListener('mouseenter', function() {
             this.style.transform = 'perspective(1000px) rotateX(5deg) rotateY(5deg) translateZ(20px)';
         });
@@ -318,7 +305,6 @@ function renderServices() {
             this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
         });
         
-        // Add mouse move effect for enhanced 3D
         serviceCard.addEventListener('mousemove', function(e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -336,7 +322,6 @@ function renderServices() {
     });
 }
 
-// Render products with 3D rotation effects
 function renderProducts() {
     productsGrid.innerHTML = '';
     
@@ -348,8 +333,7 @@ function renderProducts() {
             <div class="product-price">${product.price}</div>
             <p class="product-description">${product.description}</p>
         `;
-        
-        // Add 3D rotation effect on hover
+       
         productCard.addEventListener('mouseenter', function() {
             this.style.transform = 'perspective(1000px) rotateY(15deg) translateZ(30px)';
         });
@@ -358,7 +342,7 @@ function renderProducts() {
             this.style.transform = 'perspective(1000px) rotateY(0deg) translateZ(0px)';
         });
         
-        // Enhanced mouse tracking for 3D effect
+ 
         productCard.addEventListener('mousemove', function(e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -373,7 +357,6 @@ function renderProducts() {
     });
 }
 
-// Scroll animations
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -389,7 +372,7 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Elements to animate
+
     const elementsToAnimate = [
         '.section-title',
         '.service-card',
@@ -401,7 +384,6 @@ function initScrollAnimations() {
     elementsToAnimate.forEach(selector => {
         const elements = document.querySelectorAll(selector);
         elements.forEach((element, index) => {
-            // Set initial state
             element.style.opacity = '0';
             element.style.transform = 'translateY(30px)';
             element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
@@ -411,7 +393,7 @@ function initScrollAnimations() {
     });
 }
 
-// Keyboard navigation support
+
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Enter' || e.key === ' ') {
         if (e.target === themeToggle) {
@@ -421,15 +403,12 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Performance optimization for 3D effects
 function optimizePerformance() {
-    // Enable hardware acceleration for 3D elements
+
     const cards = document.querySelectorAll('.service-card, .product-card');
     cards.forEach(card => {
         card.style.willChange = 'transform';
         card.style.backfaceVisibility = 'hidden';
     });
 }
-
-// Initialize performance optimizations after content loads
 setTimeout(optimizePerformance, 100);
