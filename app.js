@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
 function initLoader() {
     const progressBar = document.querySelector('.loader-progress-bar');
     const counter = document.querySelector('.loader-counter');
@@ -356,6 +358,24 @@ function renderProducts() {
         productsGrid.appendChild(productCard);
     });
 }
+function addTestimonial3DEffect() {
+  document.querySelectorAll('.testimonial-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'perspective(1000px) rotateY(15deg) translateZ(30px)';
+    });
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'perspective(1000px) rotateY(0deg) translateZ(0px)';
+    });
+    card.addEventListener('mousemove', function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const centerX = rect.width / 2;
+      const rotateY = (x - centerX) / centerX * 15;
+      this.style.transform = `perspective(1000px) rotateY(${rotateY}deg) translateZ(30px)`;
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', addTestimonial3DEffect);
 
 function initScrollAnimations() {
     const observerOptions = {
@@ -377,6 +397,7 @@ function initScrollAnimations() {
         '.section-title',
         '.service-card',
         '.product-card',
+        '.testimonial-card',
         '.contact-info',
         '.contact-form'
     ];

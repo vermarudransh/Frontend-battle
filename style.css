@@ -212,7 +212,16 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-image: radial-gradient(rgba(0,0,0,0.13) 2px, transparent 2px);
+  background-size: 20px 20px;
+  background-position: 0 0;
 }
+[data-theme="dark"] body {
+  background-image: radial-gradient(circle at 1.5px 1.5px, rgba(255,255,255,0.18) 2px, transparent 0);
+  background-size: 22px 22px;
+}
+
+
 
 *,
 *::before,
@@ -1045,6 +1054,185 @@ section {
 .product-card:hover .product-description {
   transform: translateZ(20px);
 }
+.testimonials {
+  background: var(--color-surface);
+  padding: var(--space-3xl) 0;
+}
+
+.testimonials .section-title {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: var(--color-background);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--space-lg);
+  border: 2px solid var(--color-primary);
+}
+
+.testimonial-card blockquote {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-lg) 0;
+  line-height: 1.6;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-author {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.testimonial-role {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+.testimonial-card {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: var(--perspective);
+  transition: transform 0.6s var(--easing), box-shadow 0.6s var(--easing);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.testimonial-card:hover {
+  transform: perspective(1000px) rotateY(var(--rotation-amount));
+  box-shadow: 15px 15px 30px var(--shadow-color);
+  z-index: 1;
+}
+
+.testimonial-card blockquote,
+.testimonial-card .testimonial-author,
+.testimonial-card .testimonial-role {
+  transition: transform 0.5s var(--easing);
+}
+
+.testimonial-card:hover blockquote {
+  transform: translateZ(20px);
+}
+.testimonial-card:hover .testimonial-author {
+  transform: translateZ(15px);
+}
+.testimonial-card:hover .testimonial-role {
+  transform: translateZ(10px);
+}
+
+.profile-minimal {
+  padding: var(--space-3xl) 0 var(--space-2xl) 0;
+  background: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-minimal .container {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 var(--space-md);
+}
+
+.profile-minimal__title {
+  font-size: 2.2rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.profile-minimal__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-size: 1.07rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.profile-minimal__meta .dot-sep {
+  width: 4px;
+  height: 4px;
+  background: var(--color-text-secondary);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.profile-minimal__desc {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+  line-height: 1.7;
+}
+
+.profile-minimal__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em;
+  margin-top: var(--space-sm);
+}
+
+.profile-minimal__skills span {
+  background: var(--color-secondary);
+  color: var(--color-text);
+  font-size: 1rem;
+  border-radius: var(--radius-full);
+  padding: 0.33em 1.1em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background 0.2s;
+}
+
+.profile-minimal__skills span:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .profile-minimal .container {
+    padding: 0 var(--space-xs);
+  }
+  .profile-minimal__title {
+    font-size: 1.4rem;
+  }
+}
+
+
 
 .contact-content {
   display: grid;
